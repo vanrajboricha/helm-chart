@@ -1,0 +1,9 @@
+service:
+  name: helmchart
+  identifier: helmchart
+  serviceDefinition:
+    type: Kubernetes
+    spec: {}
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: AZURE
