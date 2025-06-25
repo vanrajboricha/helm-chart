@@ -1,0 +1,29 @@
+service:
+  name: helmchart
+  identifier: helmchart
+  serviceDefinition:
+    type: Kubernetes
+    spec:
+      manifests:
+        - manifest:
+            identifier: nginx
+            type: HelmChart
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: github_vanrajboricha
+                  gitFetchType: Branch
+                  folderPath: /charts
+                  repoName: helm-chart
+                  branch: main
+              subChartPath: ""
+              valuesPaths:
+                - charts/values.yaml
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
+              helmVersion: V3
+              fetchHelmChartMetadata: false
+  gitOpsEnabled: false
+  orgIdentifier: default
+  projectIdentifier: AZURE
